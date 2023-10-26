@@ -1,6 +1,6 @@
 import os
 from django.http import HttpResponsePermanentRedirect
-from rest_framework import generics, status, views, permissions
+from rest_framework import generics, status, permissions
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework_simplejwt.authentication import JWTAuthentication
@@ -39,7 +39,6 @@ class RegisterView(generics.GenericAPIView):
 
 class LoginAPIView(generics.GenericAPIView):
     serializer_class = LoginSerializer
-
 
     def post(self, request):
         serializer = self.serializer_class(data=request.data)
